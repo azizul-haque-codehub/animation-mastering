@@ -12,14 +12,20 @@
 			<img class="football" src="./images/image.png" alt="" />
 			<div class="ball"></div>
 		</main>
-		<footer>
-			<p>Footer</p>
-		</footer>
+		<p>Click anywhere to move the ball</p>
+		<div id="foo" class="ball"></div>
+
 		<script>
-			const ball = document.querySelector(".ball");
-			document.addEventListener("mousemove", (e) => {
-				ball.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-			});
+			// Make the ball move to a certain position:
+			const f = document.getElementById("foo");
+			document.addEventListener(
+				"mousemove",
+				(ev) => {
+					f.style.transform = `translateY(${ev.clientY - 25}px)`;
+					f.style.transform += `translateX(${ev.clientX - 25}px)`;
+				},
+				false,
+			);
 		</script>
 	</body>
 </html>
