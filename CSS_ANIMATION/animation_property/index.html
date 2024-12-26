@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS ANIMation property</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<main>
+			<div class="box"></div>
+			<img class="football" src="./images/image.png" alt="" />
+			<div class="ball"></div>
+		</main>
+		<footer>
+			<p>Footer</p>
+		</footer>
+		<script>
+			const ball = document.querySelector(".ball");
+			document.addEventListener("mousemove", (e) => {
+				ball.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+			});
+		</script>
+	</body>
+</html>

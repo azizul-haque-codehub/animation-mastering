@@ -1,0 +1,76 @@
+/* .box {
+	width: min(200px, 300px);
+	height: 200px;
+	background: deeppink;
+	position: relative;
+	inset: 50%;
+	translate: -50% -50%;
+	animation-name: bounce;
+	animation-duration: 5s;
+	animation-iteration-count: 5;
+ 
+}
+
+@keyframes bounce {
+	0% {
+		opacity: 0.2;
+		scale: 0;
+	}
+	100% {
+		opacity: 1;
+		scale: 1;
+		background: #000;
+	}
+}
+
+main {
+	height: 90vh;
+} */
+
+.football {
+	width: min(100px, 300px);
+	border-radius: 20%;
+	animation: footballanimation 3s infinite linear;
+	position: absolute;
+	z-index: 0.5;
+}
+@keyframes footballanimation {
+	0% {
+		rotate: 0deg;
+		left: 0px;
+	}
+	50% {
+		rotate: 360deg;
+		left: 70vw;
+	}
+	100% {
+		rotate: -360deg;
+		left: 0px;
+	}
+}
+
+/* footer {
+	font: bold smaller + 1;
+	width: rect(100px, 200px, 300px, 400px);
+	border: 50px solid black;
+	border-style: dotted;
+	border-top-style: double;
+	border-left-color: blue;
+	border-block-color: red;
+	border-image: url("./images/image.png") fill round;
+	 border-image-source: url("./images/image.png"); 
+} */
+
+.ball{
+	width: min(100px, 300px);
+	height: 100px;
+	background: red;
+	border-radius: 50%;
+	position: absolute;
+	transition: transform 0.2s  ;
+	z-index: 0.5;
+}
+
+body{
+	overflow: hidden;
+}
