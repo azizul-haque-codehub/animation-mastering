@@ -9,7 +9,7 @@
 	<body>
 		<main>
 			<div class="box"></div>
-			<img class="football" src="./images/image.png" alt="" />
+			<img class="football" width="100" src="./images/image.png" alt="" />
 			<div class="ball"></div>
 		</main>
 		<p>Click anywhere to move the ball</p>
@@ -19,7 +19,7 @@
 			// Make the ball move to a certain position:
 			const f = document.getElementById("foo");
 			document.addEventListener(
-				"mousemove",
+				"click",
 				(ev) => {
 					f.style.transform = `translateY(${ev.clientY - 25}px)`;
 					f.style.transform += `translateX(${ev.clientX - 25}px)`;

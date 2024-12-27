@@ -26,7 +26,7 @@
 main {
 	height: 90vh;
 } */
-
+/* 
 .football {
 	width: min(100px, 300px);
 	border-radius: 20%;
@@ -47,7 +47,7 @@ main {
 		rotate: -360deg;
 		left: 0px;
 	}
-}
+} */
 
 /* footer {
 	font: bold smaller + 1;
@@ -59,6 +59,22 @@ main {
 	border-block-color: red;
 	border-image: url("./images/image.png") fill round;
 	 border-image-source: url("./images/image.png"); 
+} */
+/* 
+.ball {
+	border-radius: 25px;
+	width: 50px;
+	height: 50px;
+	background: #c00;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: transform 1s;
+	animation: 3s ease-in 1s infinite reverse both running slidein;
+  }
+  
+body{
+	overflow: hidden;
 } */
 
 .ball {
@@ -75,3 +91,4 @@ main {
 body{
 	overflow: hidden;
 }
+
