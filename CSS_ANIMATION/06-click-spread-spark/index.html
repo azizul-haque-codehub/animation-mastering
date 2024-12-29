@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>spread clicked spark</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<h2>spread clicked spark</h2>
+		<script>
+			const container = document.body;
+			container.addEventListener("click", listener);
+			function listener(eve) {
+				const spark = document.createElement("div");
+				spark.classList.add("spark");
+				spark.style.top = eve.clientY + "px";
+				spark.style.left = eve.clientX + "px";
+				spark.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
+				for (let i = 0; i <= 7; i++) {
+					const span = document.createElement("span");
+					span.style.transform = `rotate(${i * 45}deg)`;
+					spark.appendChild(span);
+				}
+				container.appendChild(spark);
+
+				setTimeout(() => spark.remove(), 1500);
+			}
+		</script>
+	</body>
+</html>
