@@ -1,0 +1,41 @@
+main {
+	min-height: 80vh;
+	display: grid;
+	place-content: center;
+	background: rgba(255, 182, 193, 0.674);
+}
+.content {
+	border: 3px solid red;
+	padding: 50px 40px;
+	margin-inline: 20px;
+	display: none;
+}
+
+.fade-in {
+	display: block;
+	animation: fade-in 1s ease-in;
+}
+
+.fade-out {
+	animation: fade-out 1s ease-out;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	from {
+		opacity: 1;
+		display: block;
+	}
+	to {
+		opacity: 0;
+		display: none;
+	}
+}
