@@ -1,22 +1,21 @@
-
 @keyframes slidein {
 	0% {
-	  transform: translate(0, 0);
+		transform: translate(0, 0);
 	}
 	100% {
-	  transform: translate(100vw, 100vh);
+		transform: translate(100vw, 100vh);
 	}
-  }
-  
-  .ball:hover {
+}
+
+.ball:hover {
 	animation-play-state: paused;
-  }
-  
-  .ball:active {
+}
+
+.ball:active {
 	animation-play-state: running;
-  }
-  
-  .ball:after {
+}
+
+.ball:after {
 	content: "";
 	position: absolute;
 	width: 50px;
@@ -25,9 +24,9 @@
 	border-radius: 25px;
 	top: 0;
 	left: 0;
-  }
-  
-  .ball:before {
+}
+
+.ball:before {
 	content: "";
 	position: absolute;
 	width: 50px;
@@ -36,76 +35,224 @@
 	border-radius: 25px;
 	top: 0;
 	left: 0;
-  }
-  
-  .ball:active:after {
+}
+
+.ball:active:after {
 	animation: 3s ease-in 1s infinite reverse both running slidein;
-  }
-  
-  .ball:active:before {
+}
+
+.ball:active:before {
 	animation: 3s ease-in 1s infinite reverse both running slidein;
-  }
-  
-  .ball:after {
+}
+
+.ball:after {
 	animation: 3s ease-in 1s infinite reverse both running slidein;
-  }
-  
-  .ball:before {
+}
+
+.ball:before {
 	animation: 3s ease-in 1s infinite reverse both running slidein;
-  }
-  
-  .ball:active:after {
+}
+
+.ball:active:after {
 	animation-play-state: running;
-  }
-  
-  .ball:active:before {
+}
+
+.ball:active:before {
 	animation-play-state: running;
-  }
-  
-  .ball:after {
+}
+
+.ball:after {
 	animation-play-state: running;
-  }
-  
-  .ball:before {
+}
+
+.ball:before {
 	animation-play-state: running;
-  }
-  
-  .ball:active:after {
+}
+
+.ball:active:after {
 	animation-play-state: paused;
-  }
-  
-  .ball:active:before {
+}
+
+.ball:active:before {
 	animation-play-state: paused;
-  }
-  
-  .ball:after {
+}
+
+.ball:after {
 	animation-play-state: paused;
-  }
-  
-  .ball:before {
+}
+
+.ball:before {
 	animation-play-state: paused;
-  }
-  
-  .ball:active:after {
+}
+
+.ball:active:after {
 	animation-play-state: running;
-  }
-  
-  .ball:active:before {
+}
+
+.ball:active:before {
 	animation-play-state: running;
-  }
-  
-  .ball:after {
+}
+
+.ball:after {
 	animation-play-state: running;
-  }
-  
-  .ball:before {
+}
+
+.ball:before {
 	animation-play-state: running;
-  }
-  
-  .ball:active:after {
+}
+
+.ball:active:after {
 	animation-play-state: paused;
-  }
-  
-  .ball:active:before {
+}
+
+.ball:active:before {
 	animation-play-state: paused;
-  }
+}
+/* 
+.slide-in-text {
+	animation-duration: 3 s;
+	animation-name: slidein;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+p {
+  animation-duration: 3s;
+	animation-name: slide-in;
+	animation-iteration-count: 1;
+  animation-direction: normal;
+}
+
+@keyframes slide-in {
+	from {
+		translate: 150vw 0;
+		scale: 1000% 2;
+    }
+    
+    to {
+      translate: 0 0;
+      scale: 100% 1;
+      }
+      } */
+
+div {
+	overflow: hidden;
+}
+p {
+	animation-duration: 3s;
+	animation-name: slide-in;
+	animation-iteration-count: 2;
+	overflow: auto;
+	resize: both;
+	/* border: 2px solid; */
+}
+p span {
+	display: inline-block;
+	animation-duration: 3s;
+	animation-name: grow-shrink;
+	animation-iteration-count: 2;
+}
+
+@keyframes slide-in {
+	from {
+		translate: 150vw 0;
+		scale: 200% 1;
+	}
+
+	to {
+		translate: 0 0;
+		scale: 100% 1;
+	}
+}
+
+@keyframes grow-shrink {
+	25%,
+	75% {
+		scale: 1;
+	}
+
+	50% {
+		scale: 2;
+		color: magenta;
+	}
+}
+
+ol {
+	counter-reset: items;
+	margin-left: 2em;
+}
+li {
+	counter-increment: items;
+}
+li::marker {
+	content: "item " counters(items, ".", numeric) ": ";
+}
+
+#replaced {
+	content: url("../images/image.png");
+}
+
+/* will not show if element replacement is supported */
+div::after {
+	content: attr(id);
+}
+
+.example {
+	font-family: system-ui;
+	font-size: 1.2rem;
+	width: 200px;
+	height: 200px;
+	background-color: rgb(71, 255, 160);
+	& > h3 {
+		color: tomato;
+		&:hover,
+		&:focus {
+			color: ivory;
+			background-color: tomato;
+		}
+	}
+}
+
+.show-hide {
+	border: 3px solid lightseagreen;
+	padding: 20px;
+	& h2 {
+		padding: 30px;
+		font-size: 5em;
+		display: none;
+	}
+	& h2.fade-in {
+		animation: fade-in 1s ease-in forwards;
+		display: block;
+	}
+	& h2.fade-in::after {
+		content: "show";
+	}
+	& h2.fade-out {
+		animation: fade-out 1s ease-out;
+	}
+	& h2.fade-out::after {
+		content: "hide";
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+		background-color: limegreen;
+	}
+}
+@keyframes fade-out {
+	from {
+		opacity: 1;
+		display: block;
+	}
+	to {
+		opacity: 0;
+		display: none;
+		background-color: lightpink;
+	}
+}
