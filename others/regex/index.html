@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regular Expressions</title>
+    <style>
+      body {
+        background-color: #27292d;
+        color: #fff;
+        font-family: sans-serif;
+      }
+      a {
+        color: rgb(114, 192, 251);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      li {
+        margin-top: 8px;
+      }
+      summary {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Regular Expressions</h1>
+    <h2>Regex Fundamentals</h2>
+    <ol>
+      <li>
+        Delimiters: Characters used to mark the beginning and end of a pattern.
+      </li>
+      <li>
+        Literal Characters: Characters without special meaning. Ex: a to z, 0 to
+        9
+      </li>
+      <li>
+        Meta-Characters: Characters with special meaning. Ex: &nbsp; . ^ $ * + ?
+        {} [] \ | ()
+      </li>
+      <li>
+        `.` is a special metacharacter and it matches any single character
+        except newline characters (\n, \r).
+      </li>
+      <li>
+        `\` is a special metacharacter and it is used to escape special
+        characters or introduce special sequences (\n, \t, etc.)
+      </li>
+      <li>
+        <details>
+          <summary>Flags/Modifiers</summary>
+          <ul>
+            <li>
+              `g` (global): Searches for all occurrences of the pattern within
+              the text, rather than just the first one.
+            </li>
+            <li>
+              `i` (case-insensitive): Ignores case differences when matching
+              letters.
+            </li>
+            <li>
+              `m` (multi-line): Changes the behavior of ^ and $ anchors to match
+              the beginning and end of each line within the text, rather than
+              just the beginning and end of the entire text.
+            </li>
+            <li>
+              `s` (dotAll): Allows the dot (.) to match newline characters (\n),
+              which it doesn't do by default.
+            </li>
+            <li>
+              `u` (<a href='/unicode' target='_blank'>unicode</a>): Enables
+              full Unicode support for the regex pattern.
+            </li>
+            <li>
+              `y` (sticky): Matches only from the last index where a previous
+              match ended.
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Character Classes</summary>
+          <ul>
+            <li>Defining sets of characters to match [abc].</li>
+            <li>Ranges within character classes [a-z] or [0-9].</li>
+            <li>Combined ranges within character classes [a-z0-9].</li>
+            <li>Negated character classes [^abc].</li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Quantifiers</summary>
+          <ul>
+            <li>`*` matches 0 or more occurrences.</li>
+            <li>`+` matches 1 or more occurrences.</li>
+            <li>`?` matches 0 or 1 occurrence.</li>
+            <li>`{n}` matches exactly `n` occurrences.</li>
+            <li>`{n,}` matches `n` or more occurrences.</li>
+            <li>`{n,m}` matches between `n` and `m` occurrences.</li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Anchors</summary>
+          <ul>
+            <li>`^` asserts the position at the start of the string.</li>
+            <li>`$` asserts the position at the end of the string.</li>
+            <li>
+              `m` (multi-line flag) (not an anchor): Changes the behavior of ^
+              and $ anchors to match the beginning and end of each line within
+              the text, rather than just the beginning and end of the entire
+              text.
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Predefined/Shorthand Character Classes</summary>
+          <ul>
+            <li>`\d` matches any digit (equivalent to [0-9]).</li>
+            <li>`\D` matches any non-digit.</li>
+            <li>
+              `\w` matches any word character (equivalent to [A-Za-z0-9_]).
+            </li>
+            <li>`\W` matches any non-word character.</li>
+            <li>
+              `\s` matches any whitespace character (spaces, tabs, line breaks).
+            </li>
+            <li>`\S` matches any non-whitespace character.</li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Alternation</summary>
+          <ul>
+            <li>Using the vertical bar `|` to specify alternatives</li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Groups and Capturing</summary>
+          <ul>
+            <li>Grouping with parentheses `()`.</li>
+            <li>Capturing groups and backreferences `(\1\2)`</li>
+            <li>Non-capturing groups `(?:...)`.</li>
+            <li>Named capture groups (?&lt;name&gt;... )</li>
+            <li>
+              Backreferences using names of named capture groups. \k&lt;name&gt;
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Word Boundaries</summary>
+          <ul>
+            <li>Word boundaries `\b`</li>
+            <li>Non-word boundaries `\B`</li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Lookaheads and Lookbehinds (Lookarounds)</summary>
+          <ul>
+            <li>Positive lookahead `pattern1(?=pattern2)`</li>
+            <li>Negative lookahead `pattern1(?!pattern2)`</li>
+            <li>Positive lookbehind `(?&lt=pattern1)pattern2`</li>
+            <li>Negative lookbehind `(?&lt!pattern1)pattern2`</li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Debugging Regular Expressions</summary>
+          <ul>
+            <li>The current input position (the current position)</li>
+            <li>Lookahead where it is before the main pattern `(?=pattern2)pattern1`</li>
+            <li>Lookbehind where it is after the main pattern `pattern1(?&lt=pattern1)`</li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Substitutions or Replacements</summary>
+          <ul>
+            <li>$& Inserts the matched substring.</li>
+            <li>
+              $` Inserts the portion of the string that precedes the matched
+              substring.
+            </li>
+            <li>
+              $' Inserts the portion of the string that follows the matched
+              substring.
+            </li>
+            <li>
+              $n Inserts the nth (1-indexed) capturing group where n is a
+              positive integer less than 100.
+            </li>
+            <li>
+              $&lt;name&gt; Inserts the named capturing group where Name is the
+              group name.
+            </li>
+            <li>$$ Inserts a "$".</li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <a href='/regex-in-js'>Regex in JavaScript</a>
+      </li>
+    </ol>
+    <h1>Regular Expressions in JavaScript</h1>
+    <h2>How to create regex in JavaScript?</h2>
+    <ol>
+      <li>Literal notation</li>
+      <li>Constructor function</li>
+    </ol>
+    <h2>RegExp methods and properties</h2>
+    <ol>
+      <li>exec()</li>
+      <li>test()</li>
+      <li>lastIndex</li>
+    </ol>
+    <h2>String methods that support regex</h2>
+    <ol>
+      <li>match()</li>
+      <li>matchAll()</li>
+      <li>replace()</li>
+      <li>replaceAll()</li>
+      <li>search()</li>
+      <li>split()</li>
+    </ol>
+  </body>
+</html>

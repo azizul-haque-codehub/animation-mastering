@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style type="text/tailwindcss">
+            @layer utilities {
+              .content-auto {
+                content-visibility: auto;
+              }
+            }
+          </style>
+	</head>
+	<body>
+		<section class="max-w-screen-md mx-auto px-4 mt-2 mb-4">
+			<div class="space-x-2">
+				<h1 class="text-3xl font-bold md:text-5xl">
+					<a
+						class="hover:underline"
+						href="https://courses.webdevsimplified.com/courses/nextjs-full-stack-course"
+					>
+						Next.js Full-Stack Course
+						<img
+							src="./nextjs.png"
+							alt="Next.js Logo"
+							class="h-12 inline rounded-full"
+					/></a>
+				</h1>
+			</div>
+			<div class="fundamentals-of-nodejs">
+				<details class="mt-4">
+					<summary class="cursor-pointer text-lg font-semibold md:text-xl">
+						Section 1: Introduction to Next.js
+					</summary>
+					<ol class="ml-4 mt-2 list-decimal space-y-3 pl-4">
+						<li>What is Next.js?</li>
+						<li>Difference Between React.js and Next.js</li>
+						<li>Setting Up the Development Environment</li>
+						<li>Exploring the App Router Folder Structure</li>
+					</ol>
+				</details>
+				<details class="mt-4">
+					<summary class="cursor-pointer text-lg font-semibold md:text-xl">
+						Section 2: Routing in Next.js
+					</summary>
+					<ol class="ml-4 mt-2 list-decimal space-y-3 pl-4">
+						<li>Creating Routes with the App Router</li>
+						<li>Understanding Layouts: layout.js and page.js</li>
+						<li>Nested Routing with App Router</li>
+						<li>Dynamic Routes and Route Groups</li>
+						<li>Catch-All and Optional Routes</li>
+					</ol>
+				</details>
+				<details class="mt-4">
+					<summary class="cursor-pointer text-lg font-semibold md:text-xl">
+						Section 3: Rendering Paradigms in Next.js
+					</summary>
+					<ol class="ml-4 mt-2 list-decimal space-y-3 pl-4">
+						<li>Client-Side Rendering (CSR) Basics</li>
+						<li>Server-Side Rendering (SSR) with App Router</li>
+						<li>Static Site Generation (SSG)</li>
+						<li>Incremental Static Regeneration (ISR)</li>
+						<li>Combining Rendering Methods for Hybrid Applications</li>
+						<li>Hydration Demystified: Bringing Pre-Rendered Pages to Life</li>
+					</ol>
+				</details>
+				<details class="mt-4" open="">
+					<summary class="cursor-pointer text-lg font-semibold md:text-xl">
+						Section 4: Data Fetching and State Management
+					</summary>
+					<ol class="ml-4 mt-2 list-decimal space-y-3 pl-4">
+						<li>Data Fetching in the App Router</li>
+						<li>Fetching Server-Side Data with React Server Components</li>
+						<li>Managing State with React Hooks and Context</li>
+						<li>Integrating Third-Party Libraries (Redux)</li>
+					</ol>
+				</details>
+				<details class="mt-4">
+					<summary class="cursor-pointer text-lg font-semibold md:text-xl">
+						Section 5: Styling in Next.js
+					</summary>
+					<ol class="ml-4 mt-2 list-decimal space-y-3 pl-4">
+						<li>Global Styles and CSS Modules</li>
+						<li>Integrating Tailwind CSS</li>
+						<li>Using Third-Party UI Libraries</li>
+						<li>Building Responsive Designs</li>
+					</ol>
+				</details>
+				<details class="mt-4">
+					<summary class="cursor-pointer text-lg font-semibold md:text-xl">
+						Section 6: API Routes and Backend Development
+					</summary>
+					<ol class="ml-4 mt-2 list-decimal space-y-3 pl-4">
+						<li>Introduction to API Routes in the App Router</li>
+						<li>Creating CRUD API Endpoints</li>
+						<li>Connecting to a Database (MongoDB)</li>
+						<li>Securing API Routes with Authentication</li>
+						<li>Handling Third-Party API Integrations</li>
+					</ol>
+				</details>
+				<details class="mt-4">
+					<summary class="cursor-pointer text-lg font-semibold md:text-xl">
+						Section 7: Authentication and Authorization
+					</summary>
+					<ol class="ml-4 mt-2 list-decimal space-y-3 pl-4">
+						<li>Authentication with next-auth</li>
+						<li>Social Logins and Custom Providers</li>
+						<li>Protecting Routes with Middleware</li>
+						<li>Role-Based Access Control (RBAC)</li>
+						<li>Implementing Secure Sessions</li>
+					</ol>
+				</details>
+				<details class="mt-4">
+					<summary class="cursor-pointer text-lg font-semibold md:text-xl">
+						Section 8: Advanced Next.js Features
+					</summary>
+					<ol class="ml-4 mt-2 list-decimal space-y-3 pl-4">
+						<li>Middleware and Edge Functions</li>
+						<li>Customizing the `Document` and `App` Components</li>
+						<li>Internationalization (i18n)</li>
+						<li>Using TypeScript with Next.js</li>
+						<li>Performance Optimization Techniques</li>
+					</ol>
+				</details>
+				<details class="mt-4">
+					<summary class="cursor-pointer text-lg font-semibold md:text-xl">
+						Section 9: Deployment and Production
+					</summary>
+					<ol class="ml-4 mt-2 list-decimal space-y-3 pl-4">
+						<li>Deploying Next.js Applications on Vercel</li>
+						<!-- <li>Static Exports for Alternative Hosting</li> -->
+						<li>Managing Environment Variables</li>
+						<li>Setting Up CI/CD Pipelines</li>
+						<li>Optimizing for Production Performance</li>
+					</ol>
+				</details>
+				<details class="mt-4">
+					<summary class="cursor-pointer text-lg font-semibold md:text-xl">
+						Section 10: Legacy Pages Router
+					</summary>
+					<ol class="ml-4 mt-2 list-decimal space-y-3 pl-4">
+						<li>Understanding the Pages Router</li>
+						<li>Routing and Dynamic Routes in Pages Router</li>
+						<li>API Routes in Pages Router</li>
+						<li>Comparing App Router and Pages Router</li>
+						<li>Transitioning from Pages Router to App Router</li>
+					</ol>
+				</details>
+				<details class="mt-4">
+					<summary class="cursor-pointer text-lg font-semibold md:text-xl">
+						Section 11: Industry Level Next.js Project Setup with TypeScript
+					</summary>
+					<ol class="ml-4 mt-2 list-decimal space-y-3 pl-4">
+						<li>Introduction to Project Setup</li>
+						<li>Initializing a Next.js Project with TypeScript</li>
+						<li>Setting Up ESLint</li>
+						<li>Configuring Prettier</li>
+						<li>Automating Code Quality with Husky and Lint-Staged</li>
+						<li>Project Directory Structure</li>
+						<li>Adding Git and Commit Guidelines</li>
+						<li>Environment Variables</li>
+					</ol>
+				</details>
+				<details class="mt-4">
+					<summary class="cursor-pointer text-lg font-semibold md:text-xl">
+						Section 12: Building Our Own Next.js
+					</summary>
+					<ol class="ml-4 mt-2 list-decimal space-y-3 pl-4">
+						<li>
+							Understanding the Core Concepts
+							<ul class="ml-4 mt-2 list-disc space-y-3 pl-4">
+								<li>What Are React Server Components?</li>
+								<li>The Role of File-Based Routing</li>
+								<li>How Next.js Combines RSC and Routing</li>
+							</ul>
+						</li>
+						<li>
+							Setting Up the Project
+							<ul class="ml-4 mt-2 list-disc space-y-3 pl-4">
+								<li>Creating a Basic Node.js Server</li>
+								<li>Setting Up React and React Server Components</li>
+								<li>Configuring Babel or SWC for JSX</li>
+							</ul>
+						</li>
+						<li>
+							Implementing File-Based Routing
+							<ul class="ml-4 mt-2 list-disc space-y-3 pl-4">
+								<li>Reading Files from a Routes Directory</li>
+								<li>
+									Mapping Files to Routes (e.g., `/pages/home.js` → `/home`)
+								</li>
+								<li>
+									Handling Dynamic Routes (e.g., `/pages/[id].js` → `/post/123`)
+								</li>
+							</ul>
+						</li>
+						<li>
+							Rendering React Server Components
+							<ul class="ml-4 mt-2 list-disc space-y-3 pl-4">
+								<li>Setting Up a Basic Render Pipeline for RSC</li>
+								<li>Streaming HTML from the Server</li>
+								<li>Understanding RSC Data Fetching and Props</li>
+							</ul>
+						</li>
+					</ol>
+				</details>
+			</div>
+		</section>
+	</body>
+</html>
