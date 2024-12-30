@@ -11,13 +11,21 @@
 		<script>
 			const container = document.body;
 			container.addEventListener("click", listener);
-			function listener(eve) {
+			container.addEventListener("keydown", (eve) =>
+				listener(eve, eve.keyCode + Math.random() * 300),
+			);
+
+			function listener(eve, keyCode) {
 				const spark = document.createElement("div");
 				spark.classList.add("spark");
+				if (keyCode) {
+					spark.style.top = keyCode + "px";
+					spark.style.left = keyCode + "px";
+				}
 				spark.style.top = eve.clientY + "px";
 				spark.style.left = eve.clientX + "px";
 				spark.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
-				for (let i = 0; i <= 7; i++) {
+				for (let i = 1; i <= 15; i++) {
 					const span = document.createElement("span");
 					span.style.transform = `rotate(${i * 45}deg)`;
 					spark.appendChild(span);
