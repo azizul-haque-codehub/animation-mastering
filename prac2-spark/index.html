@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		.spark {
+			position: relative;
+			padding-inline: 30px;
+		}
+		.spark span {
+			position: absolute;
+			transform-origin: center;
+			width: 4px;
+			height: 50px;
+			outline: 3px solid;
+			transition: 0.4s;
+		}
+		.spark span:hover::after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: lime;
+			animation: spread-spark 0.4s ease-in-out;
+		}
+		@keyframes spread-spark {
+			from {
+				transform: translateY(100%);
+			}
+			to {
+				transform: translateY(1000px);
+			}
+		}
+	</style>
+	<body>
+		<h1>Click anywhere to watch a big-bang</h1>
+		<div class="spark">
+			<span style="transform: rotate(45deg)"></span>
+			<span style="transform: rotate(90deg)"></span>
+			<span style="transform: rotate(135deg)"></span>
+			<span style="transform: rotate(180deg)"></span>
+			<span style="transform: rotate(225deg)"></span>
+		</div>
+	</body>
+</html>
