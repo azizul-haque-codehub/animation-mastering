@@ -3,46 +3,77 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>spark animation</title>
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			body {
+				min-height: 100vh;
+				overflow: hidden;
+			}
+			body:active {
+				cursor:  crosshair;
+			}
+			.spark {
+				width: 40px;
+				height: 40px;
+				/* background: lime; */
+				position: absolute;
+			}
+			.spark span {
+				position: absolute;
+				width: 3px;
+				height: 30px;
+				/* outline: 2px solid; */
+				filter: drop-shadow(0 0 3px #0f0);
+			}
+			.spark span::before {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: lime;
+				/* outline: 1px solid; */
+				animation: spread-particles 2s ease-in-out forwards;
+			}
+			@keyframes spread-particles {
+				0% {
+					transform: translateY(5px);
+				}
+				100% {
+					transform: translateY(1200px);
+				}
+			}
+			input{
+				padding: 10px 20px;
+				font-size: 2rem;
+				outline: none;
+				border: 2px solid;
+			}
+		</style>
 	</head>
-	<style>
-		.spark {
-			position: relative;
-			padding-inline: 30px;
-		}
-		.spark span {
-			position: absolute;
-			transform-origin: center;
-			width: 4px;
-			height: 50px;
-			outline: 3px solid;
-			transition: 0.4s;
-		}
-		.spark span:hover::after {
-			content: "";
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			background-color: lime;
-			animation: spread-spark 0.4s ease-in-out;
-		}
-		@keyframes spread-spark {
-			from {
-				transform: translateY(100%);
-			}
-			to {
-				transform: translateY(1000px);
-			}
-		}
-	</style>
 	<body>
-		<h1>Click anywhere to watch a big-bang</h1>
-		<div class="spark">
-			<span style="transform: rotate(45deg)"></span>
-			<span style="transform: rotate(90deg)"></span>
-			<span style="transform: rotate(135deg)"></span>
-			<span style="transform: rotate(180deg)"></span>
-			<span style="transform: rotate(225deg)"></span>
-		</div>
+		<h2>Click anywhere to look at amazing</h2>
+		<input type="text">
+		<script>
+			const container = document.body;
+			document.querySelector("input").addEventListener("input", listener);
+			function listener(event) {
+				const spark = document.createElement("div");
+				spark.classList.add("spark");
+				spark.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
+
+				for (let i = 1; i <= 8; i++) {
+					const particle = document.createElement("span");
+					particle.style.transform = `rotate(${i * 45}deg)`;
+					spark.append(particle);
+				}
+				spark.style.top = `${Math.random()*200}px`;
+				spark.style.left = `${Math.random()*200}px`;
+				container.append(spark);
+				setTimeout(() => {
+					spark.remove();
+				}, 1500);
+			}
+		</script>
 	</body>
 </html>
