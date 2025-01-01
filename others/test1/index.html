@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+        <style>
+            .box{
+                width: 200px;
+                height: 200px;
+                background: #0f0;
+            }
+        </style>
+	</head>
+	<body>
+		<h3>Test project</h3>
+        <div class="box"></div>
+		<script>
+			const box = document.querySelector(".box");
+			let position = 0;
+			function move() {
+                console.log(position);
+				position += 1;
+				box.style.transform = `translateX(${position}px)`;
+                console.log(position);
+			}
+            // requestAnimationFrame(move);
+            const moveInterval  = setInterval(move,16)
+		</script>
+	</body>
+</html>
