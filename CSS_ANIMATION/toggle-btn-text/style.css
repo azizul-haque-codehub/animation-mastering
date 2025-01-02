@@ -1,0 +1,23 @@
+.toggle-btn {
+	border: 2px solid;
+	max-width: max-content;
+	padding: 10px 15px;
+	font-family: sans-serif;
+    user-select: none;
+    cursor: pointer;
+}
+.toggle-btn span {
+    transition: top .4s ease;
+}
+.toggle-btn span:nth-child(2) {
+	display: none;
+}
+.active span:nth-child(2) {
+    display: block;
+}
+.active span:nth-child(1) {
+    position: absolute;
+    top: -100px;
+}
+
+ 

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Btn Text</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="toggle-btn">
+        <span>Go Contact</span>
+        <span>Go Home</span>
+    </div>
+    <script>
+        const toggle = document.querySelector('.toggle-btn')
+        toggle.addEventListener('click',()=>{
+            toggle.classList.toggle('active')
+        })
+    </script>
+</body>
+</html>
