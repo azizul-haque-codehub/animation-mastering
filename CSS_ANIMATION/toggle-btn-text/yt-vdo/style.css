@@ -1,0 +1,36 @@
+.toggler {
+	width: 150px;
+	padding: 20px;
+    border: 2px solid;
+    position: relative;
+    right: 20px;
+    overflow: hidden;
+}
+
+.toggler span {
+    transition: .8s ease;
+    background-color: palegoldenrod;
+    font-size: 2em;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggler span:nth-child(2){
+    background-color: plum;
+    transform: translateY(110%);
+}
+
+.toggler.active span:nth-child(1){
+    transform: translateY(-110%);
+
+}
+.toggler.active span:nth-child(2){
+    transform: translateY(0%);
+
+}
