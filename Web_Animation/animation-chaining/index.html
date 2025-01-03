@@ -4,14 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Animation Chaining</title>
-		<link rel="stylesheet" href="style.css" />
+		<!-- <link rel="stylesheet" href="style.css" /> -->
+		<style>
+			.box {
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: relative;
+				transition: transform 1s;
+			}
+		</style>
+		<script src="./app.js" defer></script>
 	</head>
 	<body>
 		<div class="box"><button class="btn">Click to add chain</button></div>
-		<script>
-			const btn = document.querySelector(".btn");
-			const box = document.querySelector(".box");
-			btn.onclick = () => box.classList.toggle("chained");
-		</script>
 	</body>
 </html>
