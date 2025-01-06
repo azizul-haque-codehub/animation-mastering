@@ -24,10 +24,10 @@ particlesJS(
 				},
 			},
 			color: {
-				value: "#f00",
+				value:[ "#f00",'#0f0','ff0'],
 			},
 			shape: {
-				type: ["circle", "polygon", "triangle", "rectangle", "stroke"],
+				type: ["stroke", "circle", "star", "polygon", "triangle", "rectangle"],
 				stroke: {
 					width: 0.2,
 					color: "#000000",
@@ -74,7 +74,7 @@ particlesJS(
 				enable: true,
 				speed: 2,
 				direction: "top",
-				random: true,
+				random: false,
 				straight: false,
 				out_mode: "out",
 				attract: {
