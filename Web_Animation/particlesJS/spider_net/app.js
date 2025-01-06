@@ -27,7 +27,7 @@ window.particlesJS(
 				value: "#0f0",
 			},
 			shape: {
-				type: ["circle",'image'  ,"triangle",'polygon','rectangle'],
+				type: ["circle", "image", "triangle", "polygon", "rectangle"],
 				stroke: {
 					width: 1,
 					color: "#ee00ff",
