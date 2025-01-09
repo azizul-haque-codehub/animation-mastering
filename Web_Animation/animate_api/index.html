@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=l" />
+		<title>animate api</title>
+	</head>
+	<body style="min-height: 1000vh;">
+		<img
+			style="display: block; margin-inline: auto"
+			src="../images/Pose_1.webp"
+			alt=""
+		/>
+		<script>
+			const img = document.querySelector("img");
+			const body = document.querySelector("body");
+
+			const timeline = new ViewTimeline({
+				subject: body,
+				axis: "block",
+			});
+
+			img.animate(
+				{
+					opacity: [0, 1],
+					transform: ["scaleX(0)", "scaleX(1.5)"],
+				},
+				{
+					fill: "both",
+					duration: 1,
+					timeline,
+					rangeStart: "cover 0%",
+					rangeEnd: "cover 100%",
+				},
+			);
+            console.table(timeline);
+		</script>
+	</body>
+</html>
